@@ -1,33 +1,25 @@
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import Items from '../api/Items';
+import Item from './Item';
 
 class App extends Component {
-    constructor(){
-        super();
-        this.state = {
-            count: 0
-        }
-    }
-    headingClick(){
-        this.setState({count: this.state.count + 1});
-    }
-
   render(){
     return (
-      <header onClick={this.headingClick.bind(this)}>
-        <Heading count={this.state.count} />
-      </header>
+        <div>
+            <header>
+                LevelUp Voting
+            </header>
+            <main>
+            {this.props.items.map((item) => {
+                return(
+                    <Item item={item} />
+                )
+            })}
+            </main>
+        </div>
     );
   }
-}
-
-class Heading extends Component {
-    render(){
-        return (
-            <h1>{this.props.count}</h1>
-        );
-    }
 }
 
 export default createContainer(() => {
