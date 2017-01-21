@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
-import Items from '../api/Items';
+
 import Item from './Item';
 
 class App extends Component {
