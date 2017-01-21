@@ -36,7 +36,7 @@ class App extends Component {
             </header>
             <main>
 
-            <form onSubmit={this.addItems.bind(this)}>
+            <form className='new-items' onSubmit={this.addItems.bind(this)}>
                 <input type='text' ref='itemOne' />
                 <input type='text' ref='itemTwo' />
                 <button type='submit'>Add Item</button>
